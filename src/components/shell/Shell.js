@@ -1,18 +1,12 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './Shell.css';
+import Body from '../body/Body'
 
 function Shell() {
   return (
     <div className="Shell">
-      <header className="Shell-header">
-        <img src={logo} className="Shell-logo" alt="logo" />
-        <p>
-          Edit <code>src/Shell.js</code> and save to reload.
-        </p>
-        <a className="Shell-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <header />
+      <Body />
     </div>
   );
 }
