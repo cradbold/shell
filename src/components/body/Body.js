@@ -7,6 +7,13 @@ const Body = () => {
     'source': 'src/components/body/Body.js'
   });
 
+  const changeSource = (e) => {
+    setState({
+      ...state,
+      'source': e.target.value
+    });
+  }
+
   return (
     <div className="Body">
       <img src={logo} className="Body-logo" alt="logo" />
@@ -17,10 +24,7 @@ const Body = () => {
         Learn React
       </a>
       <p>
-        <input value={state.source} onChange={(e) => setState({
-          ...state,
-          'source': e.target.value
-        })} />
+        <input value={state.source} onChange={changeSource} />
       </p>
     </div>
   );
