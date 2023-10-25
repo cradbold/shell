@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './Body.css';
 
-function Body() {
+const Body = () => {
   return (
     <div className="Body">
       <img src={logo} className="Body-logo" alt="logo" />
