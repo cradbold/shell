@@ -10,23 +10,21 @@ const Body = () => {
     'source': 'src/components/body/Body.js'
   });
 
-  console.log(`Context: ${JSON.stringify(state)}`)
-  console.log(`Context: ${JSON.stringify(localState)}`)
+  React.useEffect(() => {
+    console.log(`State: ${JSON.stringify(state)}`)
+    console.log(`Context: ${JSON.stringify(localState)}`)
+  });
 
   const changeSource = (event) => {
     setState({
       ...localState,
       'source': event.target.value
     });
-    console.log(`State: ${JSON.stringify(state)}`)
-    console.log(`Context: ${JSON.stringify(localState)}`)
   };
 
   const clickIncrement = (event) => {
     event.preventDefault();
     incrementCount(state.count, dispatch);
-    console.log(`State: ${JSON.stringify(state)}`)
-    console.log(`Context: ${JSON.stringify(localState)}`)
   };
 
   return (
