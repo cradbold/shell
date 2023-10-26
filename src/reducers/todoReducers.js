@@ -10,34 +10,10 @@ const addTodo = (state, todoText) => {
     return { ...state, todoList: [...state.todoList, newTodo] };
 };
 
-const removeTodo = (state, todoId) => {
-    const newTodoList = state.todoList.filter(todo => todo.id !== todoId);
-
-    return { ...state, todoList: newTodoList }
-};
-
-const editTodoTag = (state, todoId, tag) => {
-    const todo = state.todoList.find(todo => todo.id === todoId);
-    const todoIndex = state.todoList.indexOf(todo);
-    const newTodo = { ...todo, tag };
-
-    const newTodoList = [
-        ...state.todoList.slice(0, todoIndex),
-        newTodo,
-        ...state.todoList.slice(todoIndex + 1),
-    ];
-
-    return { ...state, todoList: newTodoList }
-};
-
 export const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_TODO':
             return addTodo(state, action.todoText);
-        case 'REMOVE_TODO':
-            return removeTodo(state, action.todoId);
-        case 'EDIT_TODO_TAG':
-            return editTodoTag(state, action.todoId, action.tag);
         default:
             return state;
     }
