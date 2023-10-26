@@ -3,6 +3,7 @@ import React from 'react';
 import './Body.css';
 import { incrementCount } from '../../actions';
 import { Store } from '../../store/store';
+import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const Body = () => {
@@ -31,19 +32,15 @@ const Body = () => {
   return (
     <div className="Body">
       <img src={logo} className="Body-logo" alt="logo" />
+        <p>
+          <Form.Label>Edit <code>{localState.source}</code> and save to reload.</Form.Label>
+          {/* Edit <code>{localState.source}</code> and save to reload. */}
+        </p>
       <p>
-        Edit <code>{localState.source}</code> and save to reload.
-      </p>
-      <a className="Body-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React
-      </a>
-      <p>
-        <input value={localState.source} onChange={changeSource} />
+        <input className="Body-input" value={localState.source} onChange={changeSource} />
       </p>
       <p>
-        <Button onClick={clickIncrement}>
-          Increment
-        </Button>
+        <Button onClick={clickIncrement}>Increment</Button>
       </p>
     </div>
   );

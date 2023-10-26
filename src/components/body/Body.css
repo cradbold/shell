@@ -9,12 +9,8 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .Body-logo {
-    animation: Body-logo-spin infinite 20s linear;
+    animation: Body-logo-spin infinite 10s linear;
   }
-}
-
-.Body-link {
-  color: #61dafb;
 }
 
 @keyframes Body-logo-spin {
@@ -24,4 +20,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Body-input {
+  width: 40hmin;
 }
