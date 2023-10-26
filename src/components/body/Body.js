@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import './Body.css';
+import './Body.scss';
 import { incrementCount } from '../../actions';
 import { Store } from '../../store/store';
 import Form from 'react-bootstrap/Form';
@@ -32,13 +32,16 @@ const Body = () => {
   return (
     <div className="Body">
       <img src={logo} className="Body-logo" alt="logo" />
-        <p>
-          <Form.Label>Edit <code>{localState.source}</code> and save to reload.</Form.Label>
-          {/* Edit <code>{localState.source}</code> and save to reload. */}
-        </p>
       <p>
-        <input className="Body-input" value={localState.source} onChange={changeSource} />
-      </p>
+        <Form.Label>Edit <code>{localState.source}</code> and save to reload.</Form.Label>
+        <Form.Control
+          type="text"
+          id="inputSource"
+          aria-describedby="source"
+          onChange={changeSource}
+          value={localState.source}
+        />
+        </p>
       <p>
         <Button onClick={clickIncrement}>Increment</Button>
       </p>
