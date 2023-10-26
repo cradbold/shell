@@ -4,18 +4,3 @@ export const addTodo = (todo, dispatch) => {
         todoText: todo,
     })
 };
-
-export const removeTodo = (todoId, dispatch) => {
-    dispatch({
-        type: 'REMOVE_TODO',
-        todoId,
-    })
-};
-
-export const editTag = (todoId, tag, dispatch) => {
-    dispatch({
-        type: 'EDIT_TODO_TAG',
-        todoId,
-        tag,
-    })
-};
