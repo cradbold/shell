@@ -1,31 +1,32 @@
 import logo from './logo.svg';
-import React from "react";
+import React from 'react';
 import './Body.css';
-import { addTodo } from '../../actions';
+import { incrementCount } from '../../actions';
 import { Store } from '../../store/store';
 
 const Body = () => {
-  const [state, setState] = React.useState({
-    'source': 'src/components/body/Body.js'
-  });
+  const { state, dispatch } = React.useContext(Store);
 
-  const { dispatch } = React.useContext(Store);
+  // const [_, setState] = React.useState({
+  //   ...state,
+  //   'source': 'src/components/body/Body.js'
+  // });
 
   const changeSource = (event) => {
-    setState({
-      ...state,
-      'source': event.target.value,
-      'todo': 0
-    });
+    // setState({
+    //   ...state,
+    //   'source': event.target.value
+    // });
+    console.log(state)
   };
 
-  const clickTodo = (event) => {
+  const clickIncrement = (event) => {
     event.preventDefault();
-    addTodo(state.todo, dispatch);
-    setState({
-      ...state,
-      'todo': ''
-    });
+    incrementCount(state.count, dispatch);
+    // setState({
+    //   ...state,
+    //   'count': state.count++
+    // });
     console.log(state)
   };
 
@@ -42,8 +43,8 @@ const Body = () => {
         <input value={state.source} onChange={changeSource} />
       </p>
       <p>
-        <button onClick={clickTodo}>
-          To Do
+        <button onClick={clickIncrement}>
+          Increment
         </button>
       </p>
     </div>

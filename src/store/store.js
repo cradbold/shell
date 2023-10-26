@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import { reducer } from "../reducers";
 
 const initialState = {
-    todoList: []
+    count: 0
 };
 
 export const Store = createContext(initialState);
