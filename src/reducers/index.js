@@ -1,1 +1,1 @@
-export * from "./todoReducers";
+export * from "./reducers";
