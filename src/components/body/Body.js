@@ -3,6 +3,7 @@ import React from 'react';
 import './Body.css';
 import { incrementCount } from '../../actions';
 import { Store } from '../../store/store';
+import Button from 'react-bootstrap/Button';
 
 const Body = () => {
   const { state, dispatch } = React.useContext(Store);
@@ -40,9 +41,9 @@ const Body = () => {
         <input value={localState.source} onChange={changeSource} />
       </p>
       <p>
-        <button onClick={clickIncrement}>
+        <Button onClick={clickIncrement}>
           Increment
-        </button>
+        </Button>
       </p>
     </div>
   );
