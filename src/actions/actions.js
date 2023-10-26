@@ -1,6 +1,6 @@
-export const incrementCount = (count, dispatch) => {
+export const incrementCount = (payload, dispatch) => {
     dispatch({
         type: 'INCREMENT_COUNT',
-        count
+        payload
     })
 };

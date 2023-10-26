@@ -6,41 +6,40 @@ import { Store } from '../../store/store';
 
 const Body = () => {
   const { state, dispatch } = React.useContext(Store);
+  const [localState, setState] = React.useState({
+    'source': 'src/components/body/Body.js'
+  });
 
-  // const [_, setState] = React.useState({
-  //   ...state,
-  //   'source': 'src/components/body/Body.js'
-  // });
+  console.log(`Context: ${JSON.stringify(state)}`)
+  console.log(`Context: ${JSON.stringify(localState)}`)
 
   const changeSource = (event) => {
-    // setState({
-    //   ...state,
-    //   'source': event.target.value
-    // });
-    console.log(state)
+    setState({
+      ...localState,
+      'source': event.target.value
+    });
+    console.log(`State: ${JSON.stringify(state)}`)
+    console.log(`Context: ${JSON.stringify(localState)}`)
   };
 
   const clickIncrement = (event) => {
     event.preventDefault();
     incrementCount(state.count, dispatch);
-    // setState({
-    //   ...state,
-    //   'count': state.count++
-    // });
-    console.log(state)
+    console.log(`State: ${JSON.stringify(state)}`)
+    console.log(`Context: ${JSON.stringify(localState)}`)
   };
 
   return (
     <div className="Body">
       <img src={logo} className="Body-logo" alt="logo" />
       <p>
-        Edit <code>{state.source}</code> and save to reload.
+        Edit <code>{localState.source}</code> and save to reload.
       </p>
       <a className="Body-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </a>
       <p>
-        <input value={state.source} onChange={changeSource} />
+        <input value={localState.source} onChange={changeSource} />
       </p>
       <p>
         <button onClick={clickIncrement}>

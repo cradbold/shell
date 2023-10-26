@@ -8,7 +8,7 @@ const incrementCount = (state) => {
 export const reducer = (state, action) => {
     switch (action.type) {
         case 'INCREMENT_COUNT':
-            return incrementCount(state, action.incrementCount);
+            return incrementCount(state);
         default:
             return state;
     }
