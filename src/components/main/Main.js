@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import React from 'react';
-import './Body.scss';
+import './Main.scss';
 import { incrementCount } from '../../actions';
 import { Store } from '../../store/store';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const Body = () => {
+const Main = () => {
   const { state, dispatch } = React.useContext(Store);
   const [localState, setState] = React.useState({
     'source': 'src/components/body/Body.js'
@@ -30,8 +30,8 @@ const Body = () => {
   };
 
   return (
-    <div className="Body">
-      <img src={logo} className="Body-logo" alt="logo" />
+    <div className="main">
+      <img src={logo} className="main-logo" alt="logo" />
       <p>
         <Form.Label>Edit <code>{localState.source}</code> and save to reload.</Form.Label>
         <Form.Control
@@ -49,4 +49,4 @@ const Body = () => {
   );
 }
 
-export default Body;
+export default Main;
