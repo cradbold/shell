@@ -1,15 +1,14 @@
-import './Shell.scss';
-import Header from '../header/Header'
-import Body from '../body/Body'
-import Footer from '../footer/Footer'
+import Header from '../header/Header';
+import Main from '../main/Main';
+import Footer from '../footer/Footer';
 
 const Shell = () => {
   return (
-    <div className="Shell">
+    <>
       <Header />
-      <Body />
+      <Main />
       <Footer />
-    </div>
+    </>
   );
 }
 
