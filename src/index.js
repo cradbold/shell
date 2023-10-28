@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import { StoreProvider } from './store/store';
 import Shell from './components/shell/Shell';
 import reportWebVitals from './reportWebVitals';
