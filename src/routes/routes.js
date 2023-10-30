@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Header from '../components/header/Header';
 import Main from '../components/main/Main';
 import Footer from '../components/footer/Footer';
+import { ProtectedRoute } from "./ProtectedRoute";
 
 export const Router = createBrowserRouter([
     {
@@ -17,18 +18,22 @@ export const Router = createBrowserRouter([
         path: "/dashboard",
         element: (
         <>
-            <Header />
-            <div>Dashboard!</div>
-            <Footer />
+            <ProtectedRoute>
+                <Header />
+                <div>Dashboard!</div>
+                <Footer />
+            </ProtectedRoute>
         </>
         )
     }, {
         path: "/profile",
         element: (
         <>
-            <Header />
-            <div>Profile!</div>
-            <Footer />
+            <ProtectedRoute>
+                <Header />
+                <div>Profile!</div>
+                <Footer />
+            </ProtectedRoute>
         </>
         )
     }, {
