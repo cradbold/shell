@@ -1,51 +1,11 @@
 import './Shell.scss';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from '../header/Header';
-import Main from '../main/Main';
-import Footer from '../footer/Footer';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <>
-        <Header />
-        <Main />
-        <Footer />
-      </>
-    )
-  }, {
-    path: "/dashboard",
-    element: (
-      <>
-        <Header />
-        <div>Dashboard!</div>
-        <Footer />
-      </>
-    )
-  }, {
-    path: "/profile",
-    element: (
-      <>
-        <Header />
-        <div>Profile!</div>
-        <Footer />
-      </>
-    )
-  }, {
-    path: "/login",
-    element: (
-      <>
-        <div>Login!</div>
-      </>
-    )
-  }
-]);
+import { Router } from '../../routes'
+import { RouterProvider } from "react-router-dom";
 
 const Shell = () => {
   return (
     <div className="Shell">
-        <RouterProvider router={router} />
+        <RouterProvider router={Router} />
     </div>
   );
 }
