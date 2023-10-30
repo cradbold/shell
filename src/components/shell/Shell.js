@@ -1,6 +1,6 @@
 import './Shell.scss';
-import { Router } from '../../routes'
-import { RouterProvider } from "react-router-dom";
+import { Router } from '../../routes';
+import { RouterProvider } from 'react-router-dom';
 
 const Shell = () => {
   return (
@@ -8,6 +8,6 @@ const Shell = () => {
         <RouterProvider router={Router} />
     </div>
   );
-}
+};
 
 export default Shell;

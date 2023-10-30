@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import { ProtectedRoute } from "./ProtectedRoute";
 import Header from '../components/header/Header';
 import Main from '../components/main/Main';
 import Footer from '../components/footer/Footer';
-import { ProtectedRoute } from "./ProtectedRoute";
 
 export const Router = createBrowserRouter([
     {
@@ -34,6 +34,13 @@ export const Router = createBrowserRouter([
                 <div>Profile!</div>
                 <Footer />
             </ProtectedRoute>
+        </>
+        )
+    }, {
+        path: "/register",
+        element: (
+        <>
+            <div>Register!</div>
         </>
         )
     }, {
