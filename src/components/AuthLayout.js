@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { useLoaderData, useOutlet, Await } from "react-router-dom";
-import LinearProgress from "@mui/material/LinearProgress";
-import Alert from "@mui/material/Alert";
+import Spinner from 'react-bootstrap/Spinner';
+import Alert from 'react-bootstrap/Alert';
 import { AuthProvider } from "../hooks/useAuth";
 
 export const AuthLayout = () => {
@@ -9,10 +9,10 @@ export const AuthLayout = () => {
   const { userPromise } = useLoaderData();
 
   return (
-    <Suspense fallback={<LinearProgress />}>
+    <Suspense fallback={<Spinner animation='border' />}>
       <Await
         resolve={userPromise}
-        errorElement={<Alert severity="error">Something went wrong!</Alert>}
+        errorElement={<Alert variant="danger">Something went wrong!</Alert>}
         children={(user) => (<AuthProvider userData={user}>{outlet}</AuthProvider>)}
       />
     </Suspense>

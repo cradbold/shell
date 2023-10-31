@@ -4,7 +4,7 @@ import { router } from '../../routes';
 
 const Shell = () => {
   return (
-    <div className="Shell">
+    <div className='Shell'>
       <RouterProvider router={router} />
     </div>
   );
