@@ -5,7 +5,7 @@ import { ProtectedLayout } from '../components/ProtectedLayout';
 import { HomePage } from '../pages/Home';
 import { LoginPage } from '../pages/Login';
 import { ProfilePage } from '../pages/Profile';
-import { SettingsPage } from '../pages/Settings';
+import { DashboardPage } from '../pages/Dashboard';
 
 // ideally this would be an API call to server to get logged in user data
 const getUserData = () => {
@@ -33,9 +33,9 @@ export const router = createBrowserRouter(
                 <Route path='/' element={(<HomePage />)} />
                 <Route path='/login' element={(<LoginPage />)} />
             </Route>
-            <Route path='/dashboard' element={(<ProtectedLayout />)}>
+            <Route path='/auth' element={(<ProtectedLayout />)}>
+                <Route path='dashboard' element={(<DashboardPage />)} />
                 <Route path='profile' element={(<ProfilePage />)} />
-                <Route path='settings' element={(<SettingsPage />)} />
             </Route>
         </Route>
     )
