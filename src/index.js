@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
 import { StoreProvider } from './store/store';
-import { router } from './App';
+import Shell from './components/shell/Shell'
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
@@ -13,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <StoreProvider>
-      <RouterProvider router={router} />
+      <Shell />
     </StoreProvider>
   </React.StrictMode>
 );
