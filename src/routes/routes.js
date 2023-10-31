@@ -1,8 +1,8 @@
 import { Route, createBrowserRouter, createRoutesFromElements, defer } from "react-router-dom";
 // import { ProtectedRoute } from "./ProtectedRoute";
-import { AuthLayout } from "../t_components/AuthLayout";
-import { HomeLayout } from "../t_components/HomeLayout";
-import { ProtectedLayout } from "../t_components/ProtectedLayout";
+import { AuthLayout } from "../components/AuthLayout";
+import { HomeLayout } from "../components/HomeLayout";
+import { ProtectedLayout } from "../components/ProtectedLayout";
 import { HomePage } from "../pages/Home";
 import { LoginPage } from "../pages/Login";
 import { ProfilePage } from "../pages/Profile";

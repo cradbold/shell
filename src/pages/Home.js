@@ -1,4 +1,4 @@
-import { BasicPage } from "../t_components/BasicPage";
+import { BasicPage } from "../components/BasicPage";
 import Home from "@mui/icons-material/Home";
 
 export const HomePage = () => {

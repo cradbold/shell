@@ -1,4 +1,4 @@
-import { BasicPage } from "../t_components/BasicPage";
+import { BasicPage } from "../components/BasicPage";
 import Settings from "@mui/icons-material/Settings";
 
 export const SettingsPage = () => {
