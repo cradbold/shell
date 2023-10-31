@@ -66,7 +66,7 @@ export const LoginPage = () => {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Login In
+            Log In
           </Button>
           {/* <Grid container>
             <Grid item>
