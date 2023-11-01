@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import { reducer } from "../reducers";
 
 const initialState = {
+    testState: "test",
     count: 0
 };
 

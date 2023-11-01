@@ -1,5 +1,5 @@
-import { BasicPage } from "../components/BasicPage";
+import Main from '../components/main/Main'
 
 export const DashboardPage = () => {
-  return <BasicPage title="Dashboard Page" />;
+  return <Main />;
 };

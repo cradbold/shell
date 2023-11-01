@@ -14,7 +14,7 @@ const Main = () => {
 
   React.useEffect(() => {
     console.log(`State: ${JSON.stringify(state)}`)
-    console.log(`Context: ${JSON.stringify(localState)}`)
+    console.log(`localState: ${JSON.stringify(localState)}`)
   });
 
   const changeSource = (event) => {
