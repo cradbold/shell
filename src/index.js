@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { StyledEngineProvider } from '@mui/material/styles';
+
 import { StoreProvider } from './store/store';
 import Shell from './components/shell/Shell'
 import reportWebVitals from './reportWebVitals';
@@ -12,7 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <StoreProvider>
-      <Shell />
+      <StyledEngineProvider injectFirst>
+        <Shell />
+      </StyledEngineProvider>
     </StoreProvider>
   </React.StrictMode>
 );

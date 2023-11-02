@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import React from 'react';
-import './Main.scss';
-import { incrementCount } from '../../actions';
-import { Store } from '../../store/store';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
+
+import logo from './logo.svg';
+import './Main.scss';
+import { incrementCount, decrementCount } from '../../actions';
+import { Store } from '../../store/store';
 
 const Main = () => {
   const { state, dispatch } = React.useContext(Store);
@@ -29,6 +31,11 @@ const Main = () => {
     incrementCount(state.count, dispatch);
   };
 
+  const clickDecrement = (event) => {
+    event.preventDefault();
+    decrementCount(state.count, dispatch);
+  };
+
   return (
     <div className="main">
       <img src={logo} className="main-logo" alt="logo" />
@@ -43,7 +50,8 @@ const Main = () => {
         />
         </p>
       <p>
-        <Button onClick={clickIncrement}>Increment</Button>
+        <Button onClick={clickIncrement} className='main-Button-green'>Increment</Button>
+        <Button onClick={clickDecrement} className='main-Button-red'>Decrement</Button>
       </p>
     </div>
   );

@@ -4,3 +4,10 @@ export const incrementCount = (payload, dispatch) => {
         payload
     })
 };
+
+export const decrementCount = (payload, dispatch) => {
+    dispatch({
+        type: 'DECREMENT_COUNT',
+        payload
+    })
+};
