@@ -28,12 +28,12 @@ const Main = () => {
 
   const clickIncrement = (event) => {
     event.preventDefault();
-    incrementCount(state.count, dispatch);
+    incrementCount(dispatch, state.count);
   };
 
   const clickDecrement = (event) => {
     event.preventDefault();
-    decrementCount(state.count, dispatch);
+    decrementCount(dispatch, state.count);
   };
 
   return (
