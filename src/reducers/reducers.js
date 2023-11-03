@@ -3,6 +3,23 @@ export const initialState = {
     count: 0
 };
 
+// START OF ACTIONS
+export const actions = {
+    incrementCount: (dispatch, payload) => {
+        dispatch({
+            type: 'INCREMENT_COUNT',
+            payload
+        })
+    },
+    decrementCount: (dispatch, payload) => {
+        dispatch({
+            type: 'DECREMENT_COUNT',
+            payload
+        })
+    }
+}
+// END OF ACTIONS
+
 export const reducer = (state=initialState, action) => {
     switch (action.type) {
         case 'INCREMENT_COUNT':

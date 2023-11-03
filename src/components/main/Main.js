@@ -5,8 +5,7 @@ import Button from '@mui/material/Button';
 
 import logo from './logo.svg';
 import './Main.scss';
-import { incrementCount, decrementCount } from '../../actions';
-import { Store } from '../../store/store';
+import { Store, actions as storeActions } from '../../store/store';
 
 const Main = () => {
   const { state, dispatch } = React.useContext(Store);
@@ -28,12 +27,12 @@ const Main = () => {
 
   const clickIncrement = (event) => {
     event.preventDefault();
-    incrementCount(dispatch, state.count);
+    storeActions.incrementCount(dispatch, state);
   };
 
   const clickDecrement = (event) => {
     event.preventDefault();
-    decrementCount(dispatch, state.count);
+    storeActions.decrementCount(dispatch, state);
   };
 
   return (
