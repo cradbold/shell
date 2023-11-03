@@ -1,24 +1,22 @@
-const incrementCount = (state) => {
-    return {
-        ...state,
-        'count': state.count++
-    };
-};
-
-const decrementCount = (state) => {
-    return {
-        ...state,
-        'count': state.count--
-    };
+export const initialState = {
+    testState: "test",
+    count: 0
 };
 
 export const reducer = (state, action) => {
     switch (action.type) {
         case 'INCREMENT_COUNT':
-            return incrementCount(state);
+            return {
+                ...state,
+                'count': state.count++
+            };
         case 'DECREMENT_COUNT':
-            return decrementCount(state);
+            return {
+                ...state,
+                'count': state.count--
+            };
         default:
+            console.log(`Unknown action type: ${action.type}`);
             return state;
     }
 };

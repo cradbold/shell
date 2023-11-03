@@ -1,10 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import { reducer } from "../reducers";
-
-const initialState = {
-    testState: "test",
-    count: 0
-};
+import { initialState, reducer } from "../reducers";
 
 export const Store = createContext(initialState);
 
