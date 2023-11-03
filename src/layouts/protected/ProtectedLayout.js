@@ -1,6 +1,6 @@
 import { Navigate, useOutlet } from "react-router-dom";
-import { useAuth } from "../../../hooks/useAuth";
-import { NavBar } from "../../navbar/NavBar";
+import { useAuth } from "../../hooks/useAuth";
+import { NavBar } from "../../components/navbar/NavBar";
 
 export const ProtectedLayout = () => {
   const { user } = useAuth();
