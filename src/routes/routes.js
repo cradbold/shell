@@ -2,10 +2,10 @@ import { Route, createBrowserRouter, createRoutesFromElements, defer } from 'rea
 import { AuthLayout } from '../components/layouts/auth/AuthLayout';
 import { HomeLayout } from '../components/layouts/home/HomeLayout';
 import { ProtectedLayout } from '../components/layouts/protected/ProtectedLayout';
-import { HomePage } from '../pages/Home';
-import { LoginPage } from '../pages/Login';
-import { ProfilePage } from '../pages/Profile';
-import { DashboardPage } from '../pages/Dashboard';
+import { HomePage } from '../pages/home/Home';
+import { LoginPage } from '../pages/login/Login';
+import { ProfilePage } from '../pages/profile/Profile';
+import { DashboardPage } from '../pages/dashboard/Dashboard';
 
 // ideally this would be an API call to server to get logged in user data
 const getUserData = () => {
