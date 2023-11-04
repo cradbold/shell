@@ -20,7 +20,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+// const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 // mui
 
@@ -49,6 +49,14 @@ export const NavBar = ({ pages }) => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handlePageNav = () => {
+  // const handlePageNav = (path) => {
+      setAnchorElNav(null);
+    // if (path) {
+    //   navigate(path);
+    // }
   };
 
   const handleCloseUserMenu = () => {
@@ -106,6 +114,11 @@ export const NavBar = ({ pages }) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              {/* {pages.map((page) => {
+                <MenuItem key="menu-{page.label}" onClick={handleCloseNavMenu(page.path)}>
+                  <Typography textAlign="center">{page.label}</Typography>
+                </MenuItem>
+              })} */}
               <MenuItem key="menu-products" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">Products</Typography>
               </MenuItem>
