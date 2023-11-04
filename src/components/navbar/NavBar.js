@@ -93,6 +93,12 @@ export const NavBar = ({ pages, showProfile }) => {
                 }}>
                   <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
+                <MenuItem key="useMenu-settings" onClick={() => { 
+                  handleCloseUserMenu();
+                  navigate('settings');
+                }}>
+                  <Typography textAlign="center">Settings</Typography>
+                </MenuItem>
                 <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
                   <Typography textAlign="center">Log out</Typography>
                 </MenuItem>
