@@ -17,6 +17,7 @@ export const ProtectedLayout = () => {
           { label: "Dashboard", path: "dashboard" },
           { label: "Profile", path: "profile" }
         ]}
+        showLogout
       />
       {outlet}
     </div>
