@@ -16,7 +16,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useAuth } from '../../hooks/useAuth';
 
 
-export const NavBar = ({ pages, showLogout }) => {
+export const NavBar = ({ pages, showProfile }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
   const { user, logout } = useAuth(); // eslint-disable-line no-unused-vars
@@ -64,7 +64,7 @@ export const NavBar = ({ pages, showLogout }) => {
               );
             })}
           </Box>
-          {showLogout && 
+          {showProfile && 
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -87,6 +87,12 @@ export const NavBar = ({ pages, showLogout }) => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
+                <MenuItem key="useMenu-profile" onClick={() => { 
+                  handleCloseUserMenu();
+                  navigate('profile');
+                }}>
+                  <Typography textAlign="center">Profile</Typography>
+                </MenuItem>
                 <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
                   <Typography textAlign="center">Log out</Typography>
                 </MenuItem>

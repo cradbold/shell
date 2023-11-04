@@ -14,10 +14,9 @@ export const ProtectedLayout = () => {
     <div>
       <NavBar
         pages={[
-          { label: "Dashboard", path: "dashboard" },
-          { label: "Profile", path: "profile" }
+          { label: "Dashboard", path: "dashboard" }
         ]}
-        showLogout
+        showProfile
       />
       {outlet}
     </div>
