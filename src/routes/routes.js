@@ -1,4 +1,5 @@
 import { Route, createBrowserRouter, createRoutesFromElements, defer } from 'react-router-dom';
+
 import { AuthLayout } from '../layouts/auth/AuthLayout';
 import { HomeLayout } from '../layouts/home/HomeLayout';
 import { ProtectedLayout } from '../layouts/protected/ProtectedLayout';
