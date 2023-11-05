@@ -35,7 +35,7 @@ export const router = createBrowserRouter(
                 <Route path='/' element={(<HomePage />)} />
                 <Route path='/login' element={(<LoginPage />)} />
             </Route>
-            <Route path='/auth' element={(<ProtectedLayout />)}>
+            <Route path='/portal' element={(<ProtectedLayout />)}>
                 <Route path='dashboard' element={(<DashboardPage />)} />
                 <Route path='profile' element={(<ProfilePage />)} />
                 <Route path='settings' element={(<SettingsPage />)} />
