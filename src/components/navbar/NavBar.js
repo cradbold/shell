@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 import { useAuth } from '../../hooks/useAuth';
-
+import './NavBar.scss';
 
 export const NavBar = ({ pages, showProfile }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -37,30 +37,14 @@ export const NavBar = ({ pages, showProfile }) => {
 
   return (
     <AppBar className="AppBar" position="static">
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <AdbIcon />
+          <Typography className="AppBar-Typography" component="a" href="/">ABSIDY HOLDINGS</Typography>
+          <Box className="AppBar-Box">
             {pages.map((page) => {
               return (
-                <Button key={`Button-${page.label}`} sx={{ my: 2, color: 'white', display: 'block' }} onClick={() => handleClick(page.path)}>{page.label}</Button>
+                <Button className="AppBar-Button" key={`Button-${page.label}`} onClick={() => handleClick(page.path)}>{page.label}</Button>
               );
             })}
           </Box>

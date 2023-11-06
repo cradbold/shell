@@ -1,5 +1,18 @@
-$placeholder: placeholder;
+$font-color: white;
 
-.placeholder {
-  display: flex;
+.AppBar {
+  $color: $font-color;
+
+  &-Typography {
+    color: $color;
+    text-decoration: none;
+  }
+
+  &-Button {
+    color: $color;
+  }
+
+  &-Box {
+    flex-grow: 1;
+  }
 }
