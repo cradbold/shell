@@ -46,17 +46,10 @@ export const NavBar = ({ pages, showProfile }) => {
           </Tooltip>
           <Menu
             sx={{ mt: '45px' }}
-            id="menu-appbar"
             anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
             keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right'}}
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
@@ -64,16 +57,16 @@ export const NavBar = ({ pages, showProfile }) => {
               handleCloseUserMenu();
               navigate('profile');
             }}>
-              <Typography textAlign="center">Profile</Typography>
+              <Typography>Profile</Typography>
             </MenuItem>
             <MenuItem key="useMenu-settings" onClick={() => { 
               handleCloseUserMenu();
               navigate('settings');
             }}>
-              <Typography textAlign="center">Settings</Typography>
+              <Typography>Settings</Typography>
             </MenuItem>
             <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
-              <Typography textAlign="center">Log out</Typography>
+              <Typography>Log out</Typography>
             </MenuItem>
           </Menu>
         </Box>
