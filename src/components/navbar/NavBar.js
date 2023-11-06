@@ -25,15 +25,63 @@ export const NavBar = ({ pages, showProfile }) => {
     if (path) {
       navigate(path);
     }
-  };
+  }
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
+  }
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-  };
+  }
+
+  const renderProfile = () => {
+    if (showProfile) {
+      return (
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Rad Warmbold" src="/static/images/cw.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            <MenuItem key="useMenu-profile" onClick={() => { 
+              handleCloseUserMenu();
+              navigate('profile');
+            }}>
+              <Typography textAlign="center">Profile</Typography>
+            </MenuItem>
+            <MenuItem key="useMenu-settings" onClick={() => { 
+              handleCloseUserMenu();
+              navigate('settings');
+            }}>
+              <Typography textAlign="center">Settings</Typography>
+            </MenuItem>
+            <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
+              <Typography textAlign="center">Log out</Typography>
+            </MenuItem>
+          </Menu>
+        </Box>
+      );
+    } else {
+      return (null);
+    }
+  }
 
   return (
     <AppBar className="AppBar" position="static">
@@ -48,47 +96,7 @@ export const NavBar = ({ pages, showProfile }) => {
               );
             })}
           </Box>
-          {showProfile && 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Rad Warmbold" src="/static/images/cw.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                <MenuItem key="useMenu-profile" onClick={() => { 
-                  handleCloseUserMenu();
-                  navigate('profile');
-                }}>
-                  <Typography textAlign="center">Profile</Typography>
-                </MenuItem>
-                <MenuItem key="useMenu-settings" onClick={() => { 
-                  handleCloseUserMenu();
-                  navigate('settings');
-                }}>
-                  <Typography textAlign="center">Settings</Typography>
-                </MenuItem>
-                <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
-                  <Typography textAlign="center">Log out</Typography>
-                </MenuItem>
-              </Menu>
-            </Box>
-          }
+          {renderProfile()}
         </Toolbar>
       </Container>
     </AppBar>
