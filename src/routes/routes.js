@@ -12,22 +12,11 @@ import { SettingsPage } from '../pages/settings/Settings';
 
 // ideally this would be an API call to server to get logged in user data
 const getUserData = () => {
-  return new Promise((resolve) =>
-    setTimeout(() => {
-      const user = window.localStorage.getItem('user');
-      resolve(user);
-    }, 1000)
-  );
+  return new Promise((resolve) => {
+    const user = window.localStorage.getItem('user');
+    resolve(user);
+  });
 };
-  
-// for error
-// const getUserData = () => {
-//   return new Promise((resolve, reject) =>
-//     setTimeout(() => {
-//       reject("Error");
-//     }, 1000)
-//   );
-// };
 
 export const router = createBrowserRouter(
     createRoutesFromElements(

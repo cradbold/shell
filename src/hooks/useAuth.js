@@ -1,5 +1,6 @@
 import { createContext, useContext, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { useLocalStorage } from "./useLocalStorage";
 
 const AuthContext = createContext();
@@ -9,8 +10,22 @@ export const AuthProvider = ({ children, userData }) => {
   const navigate = useNavigate();
 
   const login = useCallback(async (data) => {
-    setUser(data);
-    navigate("/portal/dashboard", { replace: true });
+    await fetch('https://dummyjson.com/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: 'kminchelle',
+        password: '0lelplR',
+        expiresInMins: 30, // optional
+      })
+    })
+    .then(response => response.json())
+    // .then(console.log)
+    .then((userData) => {
+      console.log(userData);
+      setUser(userData);
+      navigate("/portal/dashboard", { replace: true });
+    });
   }, [setUser, navigate]);
 
   const logout = useCallback(() => {
