@@ -39,7 +39,7 @@ export const NavBar = ({ pages, showProfile }) => {
   const renderProfile = () => {
     if (showProfile) {
       return (
-        <Box sx={{ flexGrow: 0 }}>
+        <Box className="AppBar-Box-Box">
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt="Rad Warmbold" src="/static/images/cw.jpg" />
