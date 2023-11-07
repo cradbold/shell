@@ -5,6 +5,7 @@ import { HomeLayout } from '../layouts/home/HomeLayout';
 import { ProtectedLayout } from '../layouts/protected/ProtectedLayout';
 import { HomePage } from '../pages/home/Home';
 import { LoginPage } from '../pages/login/Login';
+import { RegisterPage } from '../pages/register/Register';
 import { DashboardPage } from '../pages/dashboard/Dashboard';
 import { ProfilePage } from '../pages/profile/Profile';
 import { SettingsPage } from '../pages/settings/Settings';
@@ -34,6 +35,7 @@ export const router = createBrowserRouter(
             <Route element={<HomeLayout />}>
                 <Route path='/' element={(<HomePage />)} />
                 <Route path='/login' element={(<LoginPage />)} />
+                <Route path='/register' element={(<RegisterPage />)} />
             </Route>
             <Route path='/portal' element={(<ProtectedLayout />)}>
                 <Route path='dashboard' element={(<DashboardPage />)} />
