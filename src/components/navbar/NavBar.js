@@ -45,7 +45,6 @@ export const NavBar = ({ pages, showProfile }) => {
               <Avatar alt="Rad Warmbold" src="/static/images/cw.jpg" />
             </IconButton>
           </Tooltip>
-{/* import Divider from '@mui/material/Divider'; */}
             <Menu
               sx={{ mt: '45px' }}
               anchorEl={anchorElUser}
