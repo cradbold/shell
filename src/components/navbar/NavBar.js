@@ -47,9 +47,8 @@ export const NavBar = ({ pages, showProfile }) => {
           <Menu
             sx={{ mt: '45px' }}
             anchorEl={anchorElUser}
-            anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+            transformOrigin={{ vertical: 'bottom', horizontal: 'right'}}
             keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right'}}
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
