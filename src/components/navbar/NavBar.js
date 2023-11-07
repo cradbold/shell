@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
+import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -44,30 +45,32 @@ export const NavBar = ({ pages, showProfile }) => {
               <Avatar alt="Rad Warmbold" src="/static/images/cw.jpg" />
             </IconButton>
           </Tooltip>
-          <Menu
-            sx={{ mt: '45px' }}
-            anchorEl={anchorElUser}
-            transformOrigin={{ vertical: 'bottom', horizontal: 'right'}}
-            keepMounted
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            <MenuItem key="useMenu-profile" onClick={() => { 
-              handleCloseUserMenu();
-              navigate('profile');
-            }}>
-              <Typography>Profile</Typography>
-            </MenuItem>
-            <MenuItem key="useMenu-settings" onClick={() => { 
-              handleCloseUserMenu();
-              navigate('settings');
-            }}>
-              <Typography>Settings</Typography>
-            </MenuItem>
-            <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
-              <Typography>Log out</Typography>
-            </MenuItem>
-          </Menu>
+{/* import Divider from '@mui/material/Divider'; */}
+            <Menu
+              sx={{ mt: '45px' }}
+              anchorEl={anchorElUser}
+              transformOrigin={{ vertical: 'bottom', horizontal: 'right'}}
+              keepMounted
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              <MenuItem key="useMenu-profile" onClick={() => { 
+                handleCloseUserMenu();
+                navigate('profile');
+              }}>
+                <Typography>Profile</Typography>
+              </MenuItem>
+              <MenuItem key="useMenu-settings" onClick={() => { 
+                handleCloseUserMenu();
+                navigate('settings');
+              }}>
+                <Typography>Settings</Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem key="useMenu-logout" onClick={() => { logout() }}>
+                <Typography>Log out</Typography>
+              </MenuItem>
+            </Menu>
         </Box>
       );
     } else {
