@@ -10,12 +10,11 @@ export const AuthProvider = ({ children, userData }) => {
   const [user, setUser] = useLocalStorage("user", userData);
   const navigate = useNavigate();
 
-  const login = useCallback(() => {
-    fetchUserToken().then((userData) => {
-      setUser(userData);
-      navigate("/portal/dashboard", { replace: true });
-      console.log(userData);
-    });
+  const login = useCallback(async () => {
+    const userData = await fetchUserToken();
+    setUser(userData);
+    navigate("/portal/dashboard", { replace: true });
+    console.log(userData);
   }, [setUser, navigate]);
 
   const logout = useCallback(() => {
