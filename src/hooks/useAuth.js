@@ -2,6 +2,7 @@ import { createContext, useContext, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useLocalStorage } from "./useLocalStorage";
+import { fetchUserToken } from "./../services"
 
 const AuthContext = createContext();
 
@@ -9,22 +10,11 @@ export const AuthProvider = ({ children, userData }) => {
   const [user, setUser] = useLocalStorage("user", userData);
   const navigate = useNavigate();
 
-  const login = useCallback(async (data) => {
-    await fetch('https://dummyjson.com/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: 'kminchelle',
-        password: '0lelplR',
-        expiresInMins: 30, // optional
-      })
-    })
-    .then(response => response.json())
-    // .then(console.log)
-    .then((userData) => {
-      console.log(userData);
+  const login = useCallback(() => {
+    fetchUserToken().then((userData) => {
       setUser(userData);
       navigate("/portal/dashboard", { replace: true });
+      console.log(userData);
     });
   }, [setUser, navigate]);
 
