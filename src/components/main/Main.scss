@@ -38,4 +38,12 @@ $green: green;
     @extend .main-Button;
     color: $green;
   }
+
+  &-faster {
+    @extend .main-Button;
+  }
+  
+  &-slower {
+    @extend .main-Button;
+  }
 }
