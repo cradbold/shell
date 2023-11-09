@@ -1,6 +1,10 @@
+"use client";
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { StyledEngineProvider } from '@mui/material/styles';
+import { ErrorBoundary } from "react-error-boundary";
+import Alert from "@mui/material/Alert";
 
 import { StoreProvider } from './store/store';
 import Shell from './components/shell/Shell'
@@ -10,11 +14,13 @@ import * as serviceWorker from './serviceWorker';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <StoreProvider>
-      <StyledEngineProvider injectFirst>
-        <Shell />
-      </StyledEngineProvider>
-    </StoreProvider>
+    <ErrorBoundary fallback={<Alert severity="error">Something went wrong!</Alert>}>
+      <StoreProvider>
+        <StyledEngineProvider injectFirst> {/* override mui styling with sass imports */}
+          <Shell />
+        </StyledEngineProvider>
+      </StoreProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
