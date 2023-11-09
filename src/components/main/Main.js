@@ -15,8 +15,9 @@ const Main = () => {
   const [spin, setSpin] = React.useState("5s");
 
   React.useEffect(() => {
-    console.log(`State: ${JSON.stringify(state)}`)
+    console.log(`state: ${JSON.stringify(state)}`)
     console.log(`localState: ${JSON.stringify(localState)}`)
+    console.log(`spin speed: ${JSON.stringify(spin)}`)
   });
 
   const changeSource = (event) => {
@@ -36,11 +37,27 @@ const Main = () => {
     storeActions.decrementCount(dispatch, state);
   };
 
+  const clickFaster = (event) => {
+    const speed = Number(spin.slice(0, -1));
+    if (speed > 5) {
+      setSpin(`${speed - 5}s`)
+    } else {
+      // inactivate faster button
+    }
+  };
+
+  const clickSlower = (event) => {
+    const speed = Number(spin.slice(0, -1));
+    setSpin(`${speed + 5}s`)
+  }
+
   return (
     <div className="main">
       <img src={logo} className="main-logo" alt="logo" style={{ animation: `main-logo-spin infinite ${spin} linear` }}/>
-      {/* <Button onClick={clickIncrement} className='main-Button-faster'>Faster</Button>
-      <Button onClick={clickDecrement} className='main-Button-slower'>Slower</Button> */}
+      <p>
+        <Button onClick={clickFaster} className='main-Button-faster'>Faster</Button>
+        <Button onClick={clickSlower} className='main-Button-slower'>Slower</Button>
+      </p>
       <InputLabel>Edit <code>{localState.source}</code> and save to reload.</InputLabel>
       <TextField margin="normal" required fullWidth id="textFieldSource" label="Source" value={localState.source} onChange={changeSource} autoFocus />        
       <Button onClick={clickIncrement} className='main-Button-green'>Increment</Button>
