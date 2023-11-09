@@ -10,11 +10,12 @@ $green: green;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .main-logo {
-    animation: main-logo-spin infinite 10s linear;
-  }
-}
+// Moved to inline style w/o @media -- check @media
+// @media (prefers-reduced-motion: no-preference) {
+//   .main-logo {
+//     animation: main-logo-spin infinite 5s linear;
+//   }
+// }
 
 @keyframes main-logo-spin {
   from {
