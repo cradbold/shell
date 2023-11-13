@@ -2,25 +2,25 @@ import { createContext, useContext, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useLocalStorage } from "./useLocalStorage";
-import { fetchUserToken } from "./../services"
+import { fetchUserData } from "./../services"
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children, userData }) => {
-  const [user, setUser] = useLocalStorage("user", userData);
+  const [user, setUserData] = useLocalStorage("user", userData);
   const navigate = useNavigate();
 
   const login = useCallback(async () => {
-    const userData = await fetchUserToken();
-    setUser(userData);
+    const userData = await fetchUserData();
+    setUserData(userData);
     console.log(userData);
     navigate("/portal/dashboard", { replace: true });
-  }, [setUser, navigate]);
+  }, [setUserData, navigate]);
 
   const logout = useCallback(() => {
-    setUser(null);
+    setUserData(null);
     navigate("/", { replace: true });
-  }, [setUser, navigate]);
+  }, [setUserData, navigate]);
 
   const value = useMemo(() => ({
       user,

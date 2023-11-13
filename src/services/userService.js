@@ -1,4 +1,4 @@
-export const fetchUserToken = async (username) => {
+export const fetchUserData = async (username) => {
     const response = await fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
