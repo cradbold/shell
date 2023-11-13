@@ -42,7 +42,7 @@ export const NavBar = ({ pages, showProfile }) => {
         <Box className="AppBar-Box-Box">
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Rad Warmbold" src="/static/images/cw.jpg" />
+              <Avatar alt="Rad Warmbold" src={user.image} />
             </IconButton>
           </Tooltip>
             <Menu
