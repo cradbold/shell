@@ -13,8 +13,8 @@ export const AuthProvider = ({ children, userData }) => {
   const login = useCallback(async () => {
     const userData = await fetchUserToken();
     setUser(userData);
-    navigate("/portal/dashboard", { replace: true });
     console.log(userData);
+    navigate("/portal/dashboard", { replace: true });
   }, [setUser, navigate]);
 
   const logout = useCallback(() => {

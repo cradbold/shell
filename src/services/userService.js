@@ -3,10 +3,11 @@ export const fetchUserToken = async (username) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-        username: 'kminchelle',
-        password: '0lelplR',
-        expiresInMins: 30, // optional
+            username: 'kminchelle',
+            password: '0lelplR',
+            expiresInMins: 30, // optional
         })
     });
+    
     return await response.json();
 }
